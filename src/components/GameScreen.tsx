@@ -2081,6 +2081,48 @@ export default function GameScreen({
                     </span>
                   </div>
 
+                  {/* Highly Visible Next Action (Telegraphed Intent) System */}
+                  <div className={`my-2.5 p-2 rounded-lg border flex items-center gap-2 text-left shadow-[0_4px_12px_rgba(0,0,0,0.5)] transition-all duration-300 ${
+                    enemy.intent.type === 'attack' ? 'bg-red-950/55 border-red-500/40 shadow-red-900/20' :
+                    enemy.intent.type === 'defend' ? 'bg-emerald-950/55 border-emerald-500/40 shadow-emerald-900/20' :
+                    'bg-amber-950/55 border-amber-500/40 shadow-amber-900/20'
+                  }`}>
+                    <div className={`p-1.5 rounded border shrink-0 ${
+                      enemy.intent.type === 'attack' ? 'bg-red-950 text-red-400 border-red-800/40 animate-pulse' :
+                      enemy.intent.type === 'defend' ? 'bg-emerald-950 text-emerald-400 border-emerald-800/40' :
+                      'bg-amber-950 text-amber-400 border-amber-800/40'
+                    }`}>
+                      {enemy.intent.type === 'attack' ? (
+                        <Sword className="w-4 h-4 text-rose-400" />
+                      ) : enemy.intent.type === 'defend' ? (
+                        <Shield className="w-4 h-4 text-emerald-400" />
+                      ) : (
+                        <Sparkles className="w-4 h-4 text-amber-400" />
+                      )}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex justify-between items-center">
+                        <span className="text-[8.5px] font-mono text-stone-400 uppercase tracking-widest font-bold">
+                          예고된 다음 행동
+                        </span>
+                        <span className={`text-[8px] font-mono px-1 py-px rounded font-semibold ${
+                          enemy.intent.type === 'attack' ? 'bg-red-900/40 text-red-300' :
+                          enemy.intent.type === 'defend' ? 'bg-emerald-900/40 text-emerald-300' :
+                          'bg-amber-900/40 text-amber-300'
+                        }`}>
+                          {enemy.intent.type === 'attack' ? '공격형' : enemy.intent.type === 'defend' ? '방어형' : '지속/특수'}
+                        </span>
+                      </div>
+                      <p className={`text-xs font-semibold font-serif truncate mt-0.5 ${
+                        enemy.intent.type === 'attack' ? 'text-red-300 font-bold' :
+                        enemy.intent.type === 'defend' ? 'text-emerald-300' :
+                        'text-amber-305'
+                      }`}>
+                        {enemy.intent.text}
+                      </p>
+                    </div>
+                  </div>
+
                   {/* Enemy HP Progress Meter */}
                   <div className="space-y-1.5 pt-1.5 border-t border-stone-800/60">
                     <div className="flex justify-between text-[10px] font-serif">
