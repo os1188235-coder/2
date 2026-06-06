@@ -1,0 +1,26 @@
+{
+  "project_name": "card-rogue-deckbuilder",
+  "version": "2.0.0",
+  "engine": "node",
+  "node_version": ">=18.0.0",
+  "build_command": "npm run build",
+  "start_command": "npm run start",
+  "port": 3000,
+  "environment_variables": [
+    "SUPABASE_URL",
+    "SUPABASE_ANON_KEY",
+    "GEMINI_API_KEY",
+    "APP_URL"
+  ],
+  "vercel": {
+    "framework": "vite",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist"
+  },
+  "render": {
+    "service_type": "web",
+    "env": "node",
+    "buildCommand": "npm run build",
+    "startCommand": "npm run start"
+  }
+}

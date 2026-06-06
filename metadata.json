@@ -1,0 +1,8 @@
+{
+  "name": "Remix: 카드 로그 (Card Rogue)",
+  "description": "고딕 로그라이크 덱빌더. 룬 자양 융질과 암시장 구매 전략, 그리고 친구와함께 점수로 경쟁하십시오",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
